@@ -12,6 +12,7 @@ public class GR_Algorithm {
     private static double[][]rel = new double[3][20];
     private static  double[][] groupDisagreement = new double [3][20];
     private static double[][] groupRelevance = new double[3][20];
+    private static double[][] CFunction = new double[3][20];
     public static void main(String[] args) {
         setupArrays();
        //getRatings(ratings);
@@ -209,6 +210,20 @@ public class GR_Algorithm {
 
     }
 
+    /*********************************************************************************************************************************************************************************************************************************************************/
+    public static void AverageRelevance() {
+        for (int g = 0; g < 3; g++) {
+            for (int i = 0; i < 20; i++) {
+                double avg = 0;
+                for (int u = 0; u < 10; i++) {
+                    avg = 1 / 3 + (Relevance[u][i]);
+
+                }
+                groupRelevance[g][i] = avg;
+            }
+        }
+    }
+
     public static void DisagreementVariance(){
         double mean = 0;
         int u;
@@ -239,8 +254,17 @@ public class GR_Algorithm {
         }
     }
 
+    public static void Consensus() {
+        for (int g = 0; g < 3; g++) {
+            for (int itemsI = 0; itemsI < 20; itemsI++) {
+                double w = 0;
+                //rel[g][i] + w * (1- dis[g][i])
+            }
+        }
 
+    }
 
+    /*********************************************************************************************************************************************************************************************************************************************************/
     public static void testTwo(){
         System.out.println(ItemSim(items,10,0));
     }
