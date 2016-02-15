@@ -231,17 +231,13 @@ public class GR_Algorithm {
          for(i = 0; i < 20; i++){
              for(u  = 0; u < 10;u++) {
                  for (v = 0; v < 10; v++) {
+                     groupDisagreement[g][i] = div * (Relevance[u][i] - Relevance[v][i]);
                  }
                 /** Enter logic...**/
-                 //Commit222
-                 //Commit333
              }
-             //commit 455
          }
         }
-
-
-        }
+    }
 
 
 
