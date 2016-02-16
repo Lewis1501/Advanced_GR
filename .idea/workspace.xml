@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7eee8e1e-b0ba-43f1-893d-77964f747806" name="Default" comment="commit three">
+    <list default="true" id="7eee8e1e-b0ba-43f1-893d-77964f747806" name="Default" comment="Working on consensus function">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GR_Algorithm.java" afterPath="$PROJECT_DIR$/src/GR_Algorithm.java" />
     </list>
@@ -28,13 +28,13 @@
       <file leaf-file-name="GR_Algorithm.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GR_Algorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45506692">
-              <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.37760416">
+              <caret line="250" column="9" selection-start-line="250" selection-start-column="9" selection-end-line="250" selection-end-column="9" />
               <folding>
                 <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
                 <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-                <element signature="e#7772#7773#0" expanded="true" />
-                <element signature="e#7827#7828#0" expanded="true" />
+                <element signature="e#8128#8129#0" expanded="true" />
+                <element signature="e#8183#8184#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,9 +69,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="788" />
-    <option name="height" value="735" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -444,11 +445,17 @@
       <option name="project" value="LOCAL" />
       <updated>1455561693482</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Working on consensus function">
+      <created>1455575236020</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1455575236020</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="788" height="735" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -458,21 +465,21 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2957265" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.008241759" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.004538578" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29704797" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -489,7 +496,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add comment" />
     <MESSAGE value="commit three" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit three" />
+    <MESSAGE value="Working on consensus function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on consensus function" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -511,8 +519,8 @@
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -524,8 +532,8 @@
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -537,8 +545,8 @@
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -550,8 +558,8 @@
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -563,8 +571,8 @@
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -576,8 +584,8 @@
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -589,8 +597,21 @@
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GR_Algorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -602,8 +623,8 @@
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -622,8 +643,8 @@
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -635,8 +656,8 @@
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -648,8 +669,8 @@
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -661,8 +682,8 @@
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -674,8 +695,8 @@
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -689,13 +710,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GR_Algorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45506692">
-          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.37760416">
+          <caret line="250" column="9" selection-start-line="250" selection-start-column="9" selection-end-line="250" selection-end-column="9" />
           <folding>
             <element signature="method#ItemSim#0;class#GR_Algorithm#0" expanded="false" />
             <element signature="method#UserSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="e#7772#7773#0" expanded="true" />
-            <element signature="e#7827#7828#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8183#8184#0" expanded="true" />
           </folding>
         </state>
       </provider>

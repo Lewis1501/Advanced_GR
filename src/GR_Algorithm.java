@@ -13,6 +13,10 @@ public class GR_Algorithm {
     private static  double[][] groupDisagreement = new double [3][20];
     private static double[][] groupRelevance = new double[3][20];
     private static double[][] CFunction = new double[3][20];
+
+    static int[] groupSize = new int[3];
+
+
     public static void main(String[] args) {
         setupArrays();
        //getRatings(ratings);
@@ -25,12 +29,16 @@ public class GR_Algorithm {
         UserSim();
         Relevance();
         LeastMis();
-        DisagreementVariance();
+        //DisagreementVariance();
+        AverageRelevance();
         }
 
 
     public static void setupArrays() {
 
+        groupSize[0] = 3;
+        groupSize[1] = 4;
+        groupSize[2] = 4;
 
         /** Array for [users]**/
 
@@ -57,15 +65,15 @@ public class GR_Algorithm {
         Groups[0][2] = 1;
 
         /** Group 2 **/
-        Groups[1][0] = 2;
-        Groups[1][1] = 2;
-        Groups[1][2] = 2;
+        //  Groups[1][0] = 2;
+        // Groups[1][1] = 2;
+        //Groups[1][2] = 2;
 
         /** Group 3 **/
-        Groups[2][0] = 3;
-        Groups[2][1] = 3;
-        Groups[2][2] = 3;
-        Groups[2][3] = 3;
+        //   Groups[2][0] = 3;
+        //   Groups[2][1] = 3;
+        //   Groups[2][2] = 3;
+        //   Groups[2][3] = 3;
         /**End**/
 
 
@@ -194,7 +202,7 @@ public class GR_Algorithm {
 
     public static double LeastMis() {
         double min = 1000;
-        for (int g = 0; g < 3; g++) {
+        for (int g = 0; g < 1; g++) {
             for (int itemindx = 0; itemindx < 20; itemindx++) {
                 for (int u = 0; u < 10; u++) {
                     if (Relevance[u][itemindx] < min) {
@@ -212,17 +220,22 @@ public class GR_Algorithm {
 
     /*********************************************************************************************************************************************************************************************************************************************************/
     public static void AverageRelevance() {
+        double avg = 0;
         for (int g = 0; g < 3; g++) {
             for (int i = 0; i < 20; i++) {
-                double avg = 0;
-                for (int u = 0; u < 10; i++) {
-                    avg = 1 / 3 + (Relevance[u][i]);
+                for (int u = 0; u < 10; u++) {
+                    avg = avg + (Relevance[u][i]);
 
                 }
+
+                avg = avg / groupSize[g];
+
                 groupRelevance[g][i] = avg;
             }
+            }
+
         }
-    }
+
 
     public static void DisagreementVariance(){
         double mean = 0;
@@ -239,20 +252,25 @@ public class GR_Algorithm {
 
     }
 
-    public static void AveragePairWise(){
-    int div = 2 / 3*(3-1);
-    int v,u,g,i;
-        for(g = 0; g < 3;g++){
-         for(i = 0; i < 20; i++){
-             for(u  = 0; u < 10;u++) {
-                 for (v = 0; v < 10; v++) {
-                     groupDisagreement[g][i] = div * (Relevance[u][i] - Relevance[v][i]);
-                 }
+    public static void AveragePairWise() {
+        int v, u, g, i;
+        for (g = 0; g < 3; g++) {
+            for (i = 0; i < 20; i++) {
+                double dis = 0;
+                for (u = 0; u < 10; u++) {
+                    for (v = 0; v < 5; v++) {
+
+                        dis = dis + Math.abs(Relevance[u][i] - Relevance[v][i]);
+                    }
+                }
+                dis = dis * 2 / (groupSize[g] * (groupSize[g] - 1));
+
                 /** Enter logic...**/
-             }
-         }
+            }
+        }
         }
     }
+
 
     public static void Consensus() {
         for (int g = 0; g < 3; g++) {
