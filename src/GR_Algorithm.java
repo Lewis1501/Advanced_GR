@@ -10,7 +10,7 @@ public class GR_Algorithm {
     private static double[][] Groups;
     private static double[][]Relevance = new double[10][20];//Takes two users;
     private static double[][]rel = new double[3][20];
-    private static  double[][] groupDisagreement = new double [3][20];
+    private static double[][] groupDisagreement = new double[10][20];
     private static double[][] groupRelevance = new double[3][20];
     private static double[][] CFunction = new double[3][20];
 
@@ -32,6 +32,7 @@ public class GR_Algorithm {
         DisagreementVariance();
         AverageRelevance();
         AveragePairWise();
+        Consensus(0.5, 0.5);
         }
 
 
@@ -240,7 +241,7 @@ public class GR_Algorithm {
             for (int itemindx = 0; itemindx < 20; itemindx++) {
                 for (int u = 0; u < 10; u++) {
 
-                    dis = dis + Math.pow(Relevance[u][itemindx] - Relevance[0][itemindx], 2);
+                    dis = dis + Math.pow(groupDisagreement[u][itemindx] - groupDisagreement[0][itemindx], 2);
                 }
 
                 dis = dis * 1 / groupSize[g];
@@ -251,12 +252,11 @@ public class GR_Algorithm {
     }
 
     public static void AveragePairWise() {
-        int v, u, g, i;
-        for (g = 0; g < 3; g++) {
-            for (i = 0; i < 20; i++) {
+        for (int g = 0; g < 3; g++) {
+            for (int i = 0; i < 20; i++) {
                 double dis = 0;
-                for (u = 0; u < 10; u++) {
-                    for (v = 0; v < 5; v++) {
+                for (int u = 0; u < 10; u++) {
+                    for (int v = 0; v < 5; v++) {
 
                         dis = dis + Math.abs(Relevance[u][i] - Relevance[v][i]);
                     }
@@ -269,15 +269,16 @@ public class GR_Algorithm {
     }
 
 
-
-    public static void Consensus() {
+    public static void Consensus(double w1, double w2) {
+        double con = 0;
         for (int g = 0; g < 3; g++) {
             for (int itemsI = 0; itemsI < 20; itemsI++) {
-                double w = 0;
-                //rel[g][i] + w * (1- dis[g][i])
+                con = con + w1 * Relevance[g][itemsI] + w2 * (1 - groupDisagreement[g][itemsI]);
+
+
+                CFunction[g][itemsI] = con;
             }
         }
-
     }
 
     public static void testTwo(){
