@@ -29,8 +29,9 @@ public class GR_Algorithm {
         UserSim();
         Relevance();
         LeastMis();
-        //DisagreementVariance();
+        DisagreementVariance();
         AverageRelevance();
+        AveragePairWise();
         }
 
 
@@ -65,15 +66,15 @@ public class GR_Algorithm {
         Groups[0][2] = 1;
 
         /** Group 2 **/
-        //  Groups[1][0] = 2;
-        // Groups[1][1] = 2;
-        //Groups[1][2] = 2;
+        Groups[1][0] = 2;
+        Groups[1][1] = 2;
+        Groups[1][2] = 2;
 
         /** Group 3 **/
-        //   Groups[2][0] = 3;
-        //   Groups[2][1] = 3;
-        //   Groups[2][2] = 3;
-        //   Groups[2][3] = 3;
+        Groups[2][0] = 3;
+        Groups[2][1] = 3;
+        Groups[2][2] = 3;
+        Groups[2][3] = 3;
         /**End**/
 
 
@@ -145,14 +146,12 @@ public class GR_Algorithm {
             }
         }
 
-      double sim = i1 - i2;
-
         /**
          double time1 = System.nanoTime();      Used to check speed.
          System.out.println(time1 - time1);
          **/
 
-        return sim;
+        return i1 - i2;
     }
 
     public static void UserSim(){
@@ -218,7 +217,6 @@ public class GR_Algorithm {
 
     }
 
-    /*********************************************************************************************************************************************************************************************************************************************************/
     public static void AverageRelevance() {
         double avg = 0;
         for (int g = 0; g < 3; g++) {
@@ -236,17 +234,17 @@ public class GR_Algorithm {
 
         }
 
-
     public static void DisagreementVariance(){
-        double mean = 0;
-        int u;
         for(int g = 0; g < 3; g++){
-            for(int itemindx = 0; itemindx < 20; itemindx++){
-                for (u = 0; u < 10; u++){
-                    mean = mean + Relevance[u][itemindx];
+            double dis = 0;
+            for (int itemindx = 0; itemindx < 20; itemindx++) {
+                for (int u = 0; u < 10; u++) {
+
+                    dis = dis + Math.pow(Relevance[u][itemindx] - Relevance[0][itemindx], 2);
                 }
-                double div = 1 / groupDisagreement[g][0];
-               groupDisagreement[g][itemindx] = div + (Relevance[u][itemindx] - mean) * (Relevance[u][itemindx] - mean);
+
+                dis = dis * 1 / groupSize[g];
+
             }
         }
 
@@ -262,14 +260,14 @@ public class GR_Algorithm {
 
                         dis = dis + Math.abs(Relevance[u][i] - Relevance[v][i]);
                     }
-                }
-                dis = dis * 2 / (groupSize[g] * (groupSize[g] - 1));
+                    dis = dis * 2 / (groupSize[g] * (groupSize[g] - 1));
 
-                /** Enter logic...**/
+                }
+
             }
         }
-        }
     }
+
 
 
     public static void Consensus() {
@@ -282,7 +280,6 @@ public class GR_Algorithm {
 
     }
 
-    /*********************************************************************************************************************************************************************************************************************************************************/
     public static void testTwo(){
         System.out.println(ItemSim(items,10,0));
     }
@@ -309,8 +306,8 @@ public class GR_Algorithm {
 
     public static void getUsers(double[] users){
         System.out.println("Users:");
-        for(int i = 0;  i < users.length; i++){
-            System.out.println(users[i]);
+        for (double user : users) {
+            System.out.println(user);
 
         }
     }
@@ -331,10 +328,9 @@ public class GR_Algorithm {
     public static void emptyRatings(double[][] ratings) {
         int counter = 0;
         System.out.println("Unknown Ratings:");
-        for (int i = 0; i < ratings.length; i++) {
-            for (int j = 0; j < ratings[i].length; j++) {
-                if(ratings[i][j] == ratings[0][0])
-                {
+        for (double[] rating : ratings) {
+            for (int j = 0; j < rating.length; j++) {
+                if (rating[j] == ratings[0][0]) {
                     counter++;
                 }
             }
@@ -344,9 +340,9 @@ public class GR_Algorithm {
 
     public static int isElementEmpty(int a, int b) {
     double[][] arr = new double[a][b];
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                if (arr[i][j] == arr[a][b] && arr[i][j] != arr[0][0]) {
+        for (double[] anArr : arr) {
+            for (int j = 0; j < anArr.length; j++) {
+                if (anArr[j] == arr[a][b] && anArr[j] != arr[0][0]) {
                     System.out.println("Returned 0");
                     return 0;
                 } else {
@@ -361,6 +357,10 @@ public class GR_Algorithm {
 
     }
 
+    /**
+     * @param ratings
+     * @param rate
+     */
     public static void getSim(double[][] ratings, int rate) {
         /**Possibly add a user Preference into the array. **/
         System.out.println("Known Ratings:");
