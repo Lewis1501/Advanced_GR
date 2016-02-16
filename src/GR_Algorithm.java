@@ -45,7 +45,7 @@ public class GR_Algorithm {
         /** Array for [users]**/
 
         users = new String[10];
-
+        /** u.user Data file **/
         users[0] = "Lewis";
         users[1] = "John";
         users[2] = "Luke";
@@ -84,7 +84,7 @@ public class GR_Algorithm {
 
         /** Array for [items]**/
         items = new double[20];
-
+        /** u.item Data folder **/
         items[0] = 101;
         items[10] = 56;
         items[1] = 56;
@@ -117,7 +117,7 @@ public class GR_Algorithm {
             }
         }
 
-
+        /** get from data for combinations of files **/
         ratings[0][17] = 3;
         ratings[1][5] = 2;
         ratings[2][13] = 5;
