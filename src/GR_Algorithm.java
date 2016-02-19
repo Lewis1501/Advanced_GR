@@ -19,12 +19,12 @@ public class GR_Algorithm {
 
     public static void main(String[] args) {
         setupArrays();
-       //getRatings(ratings);
+        getRatings(ratings);
        //emptyRatings(ratings);
        //isElementEmpty(ratings,2,5);
        //getSim(ratings,2);
        //test();
-       //getItems(items);
+        getItems(items);
        //testTwo();
         UserSim();
         Relevance();
@@ -134,7 +134,7 @@ public class GR_Algorithm {
 
     }
 
-    public static double ItemSim(double[] itemArray,double itemOne, double itemTwo){
+/*    public static double ItemSim(double[] itemArray,double itemOne, double itemTwo){
         //   double time = System.nanoTime(); check the speed of the method.
         double i1 = 0,i2 = 0;
         for(int i = 0; i < itemArray.length; i++){
@@ -147,13 +147,15 @@ public class GR_Algorithm {
             }
         }
 
-        /**
+        *//**/
+
+    /**
          double time1 = System.nanoTime();      Used to check speed.
          System.out.println(time1 - time1);
-         **/
+     **//**//*
 
         return i1 - i2;
-    }
+    }*/
 
     public static void UserSim(){
 
@@ -170,7 +172,7 @@ public class GR_Algorithm {
                         }
                     }
 
-               // System.out.println(nominator + " " + denominator);
+                    System.out.println(nominator + " " + denominator);
                 if (denominator != 0) {
                     Sim[ux][uy] = nominator / denominator;
                       Sim[uy][ux] = Sim[ux][uy];
@@ -180,6 +182,8 @@ public class GR_Algorithm {
                 }
             }
                 Sim[ux][ux] = 0;
+                System.out.println(Sim[ux][uy]);
+
 
             }
         }
@@ -196,11 +200,12 @@ public class GR_Algorithm {
                     Rel = Rel + (Sim[ux][uy] * ratings[uy][item_idx]);
                 }
                 Relevance[ux][item_idx] = Rel;
+                System.out.println(Relevance[ux][item_idx]);
             }
         }
     }
 
-    public static double LeastMis() {
+    public static void LeastMis() {
         double min = 1000;
         for (int g = 0; g < 1; g++) {
             for (int itemindx = 0; itemindx < 20; itemindx++) {
@@ -213,10 +218,11 @@ public class GR_Algorithm {
 
             }
 
+            System.out.println(min);
         }
-        return min;
 
     }
+
 
     public static void AverageRelevance() {
         double avg = 0;
@@ -231,6 +237,8 @@ public class GR_Algorithm {
 
                 groupRelevance[g][i] = avg;
             }
+
+            System.out.println(avg);
             }
 
         }
@@ -247,6 +255,8 @@ public class GR_Algorithm {
                 dis = dis * 1 / groupSize[g];
 
             }
+            System.out.println(dis);
+
         }
 
     }
@@ -264,8 +274,11 @@ public class GR_Algorithm {
 
                 }
 
+                System.out.println(dis);
             }
+
         }
+
     }
 
 
@@ -281,9 +294,11 @@ public class GR_Algorithm {
         }
     }
 
+/*
     public static void testTwo(){
         System.out.println(ItemSim(items,10,0));
     }
+*/
 
     public static void getItems(double[] items) {
         System.out.println("Items:");
