@@ -12,6 +12,8 @@ public class GR_Algorithm {
     private static double[][]rel = new double[3][20];
     private static double[][] groupDisagreement = new double[10][20];
     private static double[][] groupRelevance = new double[3][20];
+    private static double[][] avgPair = new double[3][20];
+
     private static double[][] CFunction = new double[3][20];
 
     static int[] groupSize = new int[3];
@@ -28,10 +30,10 @@ public class GR_Algorithm {
        //testTwo();
         UserSim();
         Relevance();
-        // LeastMisery();
+        LeastMisery();
         // DisagreementVariance();
-        // AverageRelevance();
-        // AveragePairWise();
+        AverageRelevance();
+        AveragePairWise();
         // Consensus(0.5, 0.5);
         }
 
@@ -197,8 +199,8 @@ public class GR_Algorithm {
                 }
                 Relevance[ux][item_idx] = Rel;
                 if (Relevance[ux][item_idx] != Relevance[0][0]) {
-                    System.out.println(Relevance[ux][item_idx]);
-                    System.out.println(Rel);
+                    // System.out.println(Relevance[ux][item_idx]);
+                    // System.out.println(Rel);
                 }
             }
         }
@@ -209,38 +211,44 @@ public class GR_Algorithm {
         for (int g = 0; g < 1; g++) {
             for (int itemindx = 0; itemindx < 20; itemindx++) {
                 for (int u = 0; u < 10; u++) {
-                    if (Relevance[u][itemindx] < min) {
+                    if (Relevance[u][itemindx] != Relevance[0][0] && Relevance[u][itemindx] < min) {
                         min = Relevance[u][itemindx];
                     }
+                    // System.out.println(min);
                     rel[g][itemindx] = min;
                 }
 
-            }
-
-            System.out.println();
+                /**if (rel[g][itemindx] != rel[0][0])
+                 System.out.print("The least misery is " + rel[g][itemindx]);
+                 */}
         }
-
     }
 
 
     public static void AverageRelevance() {
-        double avg = 0;
-        for (int g = 0; g < 3; g++) {
-            for (int i = 0; i < 20; i++) {
+        int g = 0;
+        int i = 0;
+        for (g = 0; g < 3; g++) {
+            for (i = 0; i < 20; i++) {
+                double avg = 0;
                 for (int u = 0; u < 10; u++) {
+                    //loop and adding all rel[u][i] together
                     avg = avg + (Relevance[u][i]);
 
                 }
-
+                //dividing by the size of the group.
                 avg = avg / groupSize[g];
 
                 groupRelevance[g][i] = avg;
+                /** Not working **/
+                //  System.out.println(groupRelevance[g][i]);
+
+
             }
 
-            System.out.println(avg);
             }
 
-        }
+    }
 
     public static void DisagreementVariance(){
         for(int g = 0; g < 3; g++){
@@ -270,10 +278,12 @@ public class GR_Algorithm {
                         dis = dis + Math.abs(Relevance[u][i] - Relevance[v][i]);
                     }
                     dis = dis * 2 / (groupSize[g] * (groupSize[g] - 1));
+                    avgPair[g][i] = dis;
 
                 }
 
-                System.out.println(dis);
+                System.out.println(avgPair[g][i]);
+
             }
 
         }
