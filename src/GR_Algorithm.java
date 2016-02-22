@@ -19,43 +19,43 @@ public class GR_Algorithm {
 
     public static void main(String[] args) {
         setupArrays();
-        getRatings(ratings);
+        //  getRatings(ratings);
        //emptyRatings(ratings);
        //isElementEmpty(ratings,2,5);
        //getSim(ratings,2);
        //test();
-        getItems(items);
+        // getItems(items);
        //testTwo();
         UserSim();
-        Relevance();
-        LeastMis();
-        DisagreementVariance();
-        AverageRelevance();
-        AveragePairWise();
-        Consensus(0.5, 0.5);
+        // Relevance();
+        // LeastMis();
+        // DisagreementVariance();
+        // AverageRelevance();
+        // AveragePairWise();
+        // Consensus(0.5, 0.5);
         }
 
 
     public static void setupArrays() {
 
-        groupSize[0] = 3;
+        /*groupSize[0] = 3;
         groupSize[1] = 4;
-        groupSize[2] = 4;
+        groupSize[2] = 4;*/
 
         /** Array for [users]**/
 
         users = new String[10];
         /** u.user Data file **/
-        users[0] = "Lewis";
-        users[1] = "John";
-        users[2] = "Luke";
-        users[3] = "Al";
-        users[4] = "Mike";
-        users[5] = "Robert";
-        users[6] = "Harry";
-        users[7] = "Ghost";
-        users[8] = "Reus";
-        users[9] = "Marco";
+        users[0] = "196";
+        users[1] = "186";
+        users[2] = "22";
+        users[3] = "244";
+        users[4] = "166";
+        users[5] = "298";
+        users[6] = "115";
+        users[7] = "253";
+        users[8] = "305";
+        users[9] = "6";
         /** End **/
 
 
@@ -85,26 +85,26 @@ public class GR_Algorithm {
         /** Array for [items]**/
         items = new double[20];
         /** u.item Data folder **/
-        items[0] = 101;
-        items[10] = 56;
-        items[1] = 56;
-        items[11] = 22;
-        items[2] = 5;
-        items[12] = 18;
-        items[3] = 23;
-        items[13] = 14;
-        items[4] = 11;
-        items[14] = 64;
-        items[5] = 58;
-        items[15] = 34;
-        items[6] = 12;
-        items[16] = 24;
-        items[7] = 31;
-        items[17] = 81;
-        items[8] = 26;
-        items[18] = 95;
-        items[9] = 20;
-        items[19] = 56;
+        items[0] = 242;
+        items[10] = 302;
+        items[1] = 337;
+        items[11] = 51;
+        items[2] = 346;
+        items[12] = 474;
+        items[3] = 265;
+        items[13] = 465;
+        items[4] = 451;
+        items[14] = 86;
+        items[5] = 257;
+        items[15] = 1014;
+        items[6] = 222;
+        items[16] = 40;
+        items[7] = 29;
+        items[17] = 785;
+        items[8] = 387;
+        items[18] = 274;
+        items[9] = 104;
+        items[19] = 1184;
 
         /**End**/
 
@@ -163,29 +163,32 @@ public class GR_Algorithm {
             double nominator = 0, denominator = 0;
             for(int uy = 0; uy < users.length; uy++) {
                 for (int item_idx = 0; item_idx < items.length; item_idx++) {
-                    if (ratings[ux][item_idx] > 0 || ratings[uy][item_idx] > 0) {
+                    if (ratings[ux][item_idx] != 0 || ratings[uy][item_idx] != 0) {
                         denominator++;
                     }
                     for (int item_idy = 0; item_idy < items.length; item_idy++) {
-                        if (ratings[ux][item_idx] > 0 && ratings[uy][item_idy] < 0 && (Math.abs(ratings[ux][item_idx] - ratings[uy][item_idy]) <= 2)) {
+                        if (ratings[ux][item_idx] != 0 && ratings[uy][item_idy] != 0 && (Math.abs(ratings[ux][item_idx] - ratings[uy][item_idy]) <= 2)) {
                             nominator++;
                         }
                     }
 
+
                     System.out.println(nominator + " " + denominator);
-                if (denominator != 0) {
+
+                    if (denominator != 0) {
                     Sim[ux][uy] = nominator / denominator;
                       Sim[uy][ux] = Sim[ux][uy];
+                        System.out.println(Sim[ux][uy]);
                 } else {
                     Sim[uy][ux] = 0;
                     Sim[ux][uy] = 0;
                 }
             }
                 Sim[ux][ux] = 0;
-                System.out.println(Sim[ux][uy]);
 
 
             }
+
         }
 
         }
