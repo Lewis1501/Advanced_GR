@@ -27,8 +27,8 @@ public class GR_Algorithm {
         // getItems(items);
        //testTwo();
         UserSim();
-        // Relevance();
-        // LeastMis();
+        Relevance();
+        // LeastMisery();
         // DisagreementVariance();
         // AverageRelevance();
         // AveragePairWise();
@@ -111,11 +111,11 @@ public class GR_Algorithm {
         /** Array for [user][items] Ratings**/
         //User (U) '0' (from array 1) rated item (I) '17' (from array 2) 3, ratings are from 1 - 5..
         ratings = new double[10][20];
-        for(int i = 0; i < 10;i++){
+      /*  for(int i = 0; i < 10;i++){
             for(int j = 0 ; j < 20;j++){
                 ratings[i][j] = 0;
             }
-        }
+        }*/
 
         /** get from data for combinations of files **/
         ratings[0][17] = 3;
@@ -156,12 +156,11 @@ public class GR_Algorithm {
 
         return i1 - i2;
     }*/
+    public static void UserSim() {
 
-    public static void UserSim(){
-
-        for(int ux = 0; ux < users.length; ux++){
+        for (int ux = 0; ux < users.length; ux++) {
             double nominator = 0, denominator = 0;
-            for(int uy = 0; uy < users.length; uy++) {
+            for (int uy = 0; uy < users.length; uy++) {
                 for (int item_idx = 0; item_idx < items.length; item_idx++) {
                     if (ratings[ux][item_idx] != 0 || ratings[uy][item_idx] != 0) {
                         denominator++;
@@ -171,44 +170,41 @@ public class GR_Algorithm {
                             nominator++;
                         }
                     }
-
-
-                    System.out.println(nominator + " " + denominator);
+                    //   System.out.println(nominator + " " + denominator);
 
                     if (denominator != 0) {
-                    Sim[ux][uy] = nominator / denominator;
-                      Sim[uy][ux] = Sim[ux][uy];
-                        System.out.println(Sim[ux][uy]);
-                } else {
-                    Sim[uy][ux] = 0;
-                    Sim[ux][uy] = 0;
+                        Sim[ux][uy] = nominator / denominator;
+                        Sim[uy][ux] = Sim[ux][uy];
+                        //      System.out.println(Sim[ux][uy]);
+                    } else {
+                        Sim[uy][ux] = 0;
+                        Sim[ux][uy] = 0;
+                    }
                 }
-            }
-                Sim[ux][ux] = 0;
 
-
-            }
-
-        }
-
-        }
-
-
-    public static void Relevance() {
-        int ux, uy, item_idx;
-        for (ux = 0; ux < users.length; ux++) {
-            for (item_idx = 0; item_idx < items.length; item_idx++) {
-                double Rel = 0;
-                for (uy = 0; uy < users.length; uy++) {
-                    Rel = Rel + (Sim[ux][uy] * ratings[uy][item_idx]);
-                }
-                Relevance[ux][item_idx] = Rel;
-                System.out.println(Relevance[ux][item_idx]);
             }
         }
     }
 
-    public static void LeastMis() {
+
+    public static void Relevance() {
+
+        for (int ux = 0; ux < users.length; ux++) {
+            for (int item_idx = 0; item_idx < items.length; item_idx++) {
+                double Rel = 0;
+                for (int uy = 0; uy < users.length; uy++) {
+                    Rel = Rel + (Sim[ux][uy] * ratings[uy][item_idx]);
+                }
+                Relevance[ux][item_idx] = Rel;
+                if (Relevance[ux][item_idx] != Relevance[0][0]) {
+                    System.out.println(Relevance[ux][item_idx]);
+                    System.out.println(Rel);
+                }
+            }
+        }
+    }
+
+    public static void LeastMisery() {
         double min = 1000;
         for (int g = 0; g < 1; g++) {
             for (int itemindx = 0; itemindx < 20; itemindx++) {
@@ -221,7 +217,7 @@ public class GR_Algorithm {
 
             }
 
-            System.out.println(min);
+            System.out.println();
         }
 
     }
