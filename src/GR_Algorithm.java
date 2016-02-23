@@ -269,22 +269,23 @@ public class GR_Algorithm {
     }
 
     public static void AveragePairWise() {
+        System.out.printf("%s", "Average Pair-Wise");
         for (int g = 0; g < 3; g++) {
             for (int i = 0; i < 20; i++) {
                 double dis = 0;
                 for (int u = 0; u < 10; u++) {
                     for (int v = 0; v < 5; v++) {
-
                         dis = dis + Math.abs(Relevance[u][i] - Relevance[v][i]);
                     }
                     dis = dis * 2 / (groupSize[g] * (groupSize[g] - 1));
-                    avgPair[g][i] = dis;
 
                 }
+                avgPair[g][i] = dis;
 
                 System.out.println(avgPair[g][i]);
 
             }
+
 
         }
 
@@ -297,9 +298,10 @@ public class GR_Algorithm {
             for (int itemsI = 0; itemsI < 20; itemsI++) {
                 con = con + w1 * Relevance[g][itemsI] + w2 * (1 - groupDisagreement[g][itemsI]);
 
-
                 CFunction[g][itemsI] = con;
+
             }
+
         }
     }
 
