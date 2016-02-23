@@ -18,31 +18,32 @@ public class GR_Algorithm {
 
     static int[] groupSize = new int[3];
 
+    private static final int itemsLength = 20;
+    private static final int usersLength = 10;
+    private static final int groupLength = 1;
+
+
 
     public static void main(String[] args) {
         setupArrays();
-        //  getRatings(ratings);
+        //getRatings(ratings);
        //emptyRatings(ratings);
        //isElementEmpty(ratings,2,5);
        //getSim(ratings,2);
        //test();
-        // getItems(items);
+        //getItems(items);
        //testTwo();
         UserSim();
         Relevance();
-        LeastMisery();
-        // DisagreementVariance();
-        AverageRelevance();
-        AveragePairWise();
-        // Consensus(0.5, 0.5);
+        //LeastMisery();
+        //DisagreementVariance();
+        //AverageRelevance();
+        //AveragePairWise();
+        //Consensus(0.5, 0.5);
         }
 
 
     public static void setupArrays() {
-
-        /*groupSize[0] = 3;
-        groupSize[1] = 4;
-        groupSize[2] = 4;*/
 
         /** Array for [users]**/
 
@@ -86,6 +87,7 @@ public class GR_Algorithm {
 
         /** Array for [items]**/
         items = new double[20];
+
         /** u.item Data folder **/
         items[0] = 242;
         items[10] = 302;
@@ -120,15 +122,15 @@ public class GR_Algorithm {
         }*/
 
         /** get from data for combinations of files **/
-        ratings[0][17] = 3;
-        ratings[1][5] = 2;
-        ratings[2][13] = 5;
-        ratings[3][8] = 4;
-        ratings[4][11] = 5;
+        ratings[0][17] = 1;
+        ratings[1][5] = 4;
+        ratings[2][13] = 4;
+        ratings[3][8] = 2;
+        ratings[4][11] = 3;
         ratings[5][4] = 3;
-        ratings[6][7] = 1;
-        ratings[7][10] = 3;
-        ratings[8][19] = 4;
+        ratings[6][7] = 4;
+        ratings[7][10] = 1;
+        ratings[8][19] = 2;
         ratings[9][12] = 3;
 
         /**End**/
@@ -159,110 +161,104 @@ public class GR_Algorithm {
         return i1 - i2;
     }*/
     public static void UserSim() {
-
-        for (int ux = 0; ux < users.length; ux++) {
+        for (int ux = 0; ux < usersLength; ux++) {
             double nominator = 0, denominator = 0;
-            for (int uy = 0; uy < users.length; uy++) {
-                for (int item_idx = 0; item_idx < items.length; item_idx++) {
+            for (int uy = 0; uy < usersLength; uy++) {
+                for (int item_idx = 0; item_idx < itemsLength; item_idx++) {
                     if (ratings[ux][item_idx] != 0 || ratings[uy][item_idx] != 0) {
                         denominator++;
                     }
-                    for (int item_idy = 0; item_idy < items.length; item_idy++) {
+                    for (int item_idy = 0; item_idy < itemsLength; item_idy++) {
                         if (ratings[ux][item_idx] != 0 && ratings[uy][item_idy] != 0 && (Math.abs(ratings[ux][item_idx] - ratings[uy][item_idy]) <= 2)) {
                             nominator++;
                         }
                     }
-                    //   System.out.println(nominator + " " + denominator);
+                    //System.out.println(nominator + " " + denominator);
 
                     if (denominator != 0) {
                         Sim[ux][uy] = nominator / denominator;
                         Sim[uy][ux] = Sim[ux][uy];
-                        //      System.out.println(Sim[ux][uy]);
                     } else {
                         Sim[uy][ux] = 0;
                         Sim[ux][uy] = 0;
                     }
+
                 }
 
+                System.out.printf("userx: [%s] has a similarity to usery: [%s} of %.2f.\n", Sim[ux], Sim[uy], Sim[ux][uy]);
+
             }
+
         }
+
     }
 
 
     public static void Relevance() {
 
-        for (int ux = 0; ux < users.length; ux++) {
-            for (int item_idx = 0; item_idx < items.length; item_idx++) {
+        for (int ux = 0; ux < usersLength; ux++) {
+            for (int item_idx = 0; item_idx < itemsLength; item_idx++) {
                 double Rel = 0;
-                for (int uy = 0; uy < users.length; uy++) {
+                for (int uy = 0; uy < usersLength; uy++) {
                     Rel = Rel + (Sim[ux][uy] * ratings[uy][item_idx]);
                 }
                 Relevance[ux][item_idx] = Rel;
-                if (Relevance[ux][item_idx] != Relevance[0][0]) {
-                    // System.out.println(Relevance[ux][item_idx]);
-                    // System.out.println(Rel);
+                if (Relevance[ux][item_idx] != Relevance[0][0])
+                    System.out.printf("user %s for item %s has a relevance of %.2f.\n", users[ux], items[item_idx], Relevance[ux][item_idx]);
                 }
             }
         }
-    }
 
-    public static void LeastMisery() {
+    protected static void LeastMisery() {
         double min = 1000;
-        for (int g = 0; g < 1; g++) {
-            for (int itemindx = 0; itemindx < 20; itemindx++) {
-                for (int u = 0; u < 10; u++) {
+        for (int g = 0; g < groupLength; g++) {
+            for (int itemindx = 0; itemindx < itemsLength; itemindx++) {
+                for (int u = 0; u < usersLength; u++) {
                     if (Relevance[u][itemindx] != Relevance[0][0] && Relevance[u][itemindx] < min) {
                         min = Relevance[u][itemindx];
                     }
                     // System.out.println(min);
                     rel[g][itemindx] = min;
                 }
-
                 /**if (rel[g][itemindx] != rel[0][0])
                  System.out.print("The least misery is " + rel[g][itemindx]);
-                 */}
+                 */
+            }
         }
     }
 
-
-    public static void AverageRelevance() {
-        int g = 0;
-        int i = 0;
-        for (g = 0; g < 3; g++) {
-            for (i = 0; i < 20; i++) {
+    protected static void AverageRelevance() {
+        for (int g = 0; g < groupLength; g++) {
+            for (int i = 0; i < itemsLength; i++) {
                 double avg = 0;
-                for (int u = 0; u < 10; u++) {
+                for (int u = 0; u < usersLength; u++) {
                     //loop and adding all rel[u][i] together
                     avg = avg + (Relevance[u][i]);
 
                 }
+
                 //dividing by the size of the group.
                 avg = avg / groupSize[g];
 
                 groupRelevance[g][i] = avg;
                 /** Not working **/
                 //  System.out.println(groupRelevance[g][i]);
-
-
             }
-
             }
-
     }
 
     public static void DisagreementVariance(){
-        for(int g = 0; g < 3; g++){
+        for (int g = 0; g < groupLength; g++) {
             double dis = 0;
-            for (int itemindx = 0; itemindx < 20; itemindx++) {
-                for (int u = 0; u < 10; u++) {
-
+            for (int itemindx = 0; itemindx < itemsLength; itemindx++) {
+                for (int u = 0; u < usersLength; u++) {
                     dis = dis + Math.pow(groupDisagreement[u][itemindx] - groupDisagreement[0][itemindx], 2);
                 }
 
                 dis = dis * 1 / groupSize[g];
 
             }
-            System.out.println(dis);
+            //  System.out.println(dis);
 
         }
 
@@ -270,19 +266,22 @@ public class GR_Algorithm {
 
     public static void AveragePairWise() {
         System.out.printf("%s", "Average Pair-Wise");
-        for (int g = 0; g < 3; g++) {
-            for (int i = 0; i < 20; i++) {
+        for (int g = 0; g < groupLength; g++) {
+            for (int i = 0; i < itemsLength; i++) {
                 double dis = 0;
-                for (int u = 0; u < 10; u++) {
+                for (int u = 0; u < usersLength; u++) {
                     for (int v = 0; v < 5; v++) {
-                        dis = dis + Math.abs(Relevance[u][i] - Relevance[v][i]);
+                        if (u != v)
+                            dis = dis + Math.abs(Relevance[u][i] - Relevance[v][i]);
                     }
-                    dis = dis * 2 / (groupSize[g] * (groupSize[g] - 1));
-
                 }
+                dis = dis * 2 / (groupSize[g] * (groupSize[g] - 1));
+
+
+
                 avgPair[g][i] = dis;
 
-                System.out.println(avgPair[g][i]);
+                // System.out.println(avgPair[g][i]);
 
             }
 
@@ -293,12 +292,12 @@ public class GR_Algorithm {
 
 
     public static void Consensus(double w1, double w2) {
-        double con = 0;
-        for (int g = 0; g < 3; g++) {
-            for (int itemsI = 0; itemsI < 20; itemsI++) {
-                con = con + w1 * Relevance[g][itemsI] + w2 * (1 - groupDisagreement[g][itemsI]);
+        for (int g = 0; g < groupLength; g++) {
+            double con = 0;
+            for (int items = 0; items < itemsLength; items++) {
+                con = con + w1 * Relevance[g][items] + w2 * (1 - groupDisagreement[g][items]);
 
-                CFunction[g][itemsI] = con;
+                CFunction[g][items] = con;
 
             }
 
