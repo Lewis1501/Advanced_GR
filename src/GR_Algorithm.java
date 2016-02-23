@@ -35,7 +35,7 @@ public class GR_Algorithm {
        //testTwo();
         UserSim();
         Relevance();
-        //LeastMisery();
+        LeastMisery();
         //DisagreementVariance();
         //AverageRelevance();
         //AveragePairWise();
@@ -205,7 +205,7 @@ public class GR_Algorithm {
         }
 
     protected static void LeastMisery() {
-        double min = 1000;
+        double min = 50;
         for (int g = 0; g < groupLength; g++) {
             for (int itemindx = 0; itemindx < itemsLength; itemindx++) {
                 for (int u = 0; u < usersLength; u++) {
@@ -215,7 +215,8 @@ public class GR_Algorithm {
                     // System.out.println(min);
                     rel[g][itemindx] = min;
                 }
-                if (rel[g][itemindx] != rel[0][0]) System.out.print("The least misery is " + rel[g][itemindx]);
+                //if (rel[g][itemindx] != rel[0][0])
+                //System.out.printf("The least rated item for group %s was item %s with a rating of: %.2f\n",groupSize[g],items[itemindx],rel[g][itemindx]);
 
             }
         }
@@ -247,35 +248,36 @@ public class GR_Algorithm {
             for (int itemindx = 0; itemindx < itemsLength; itemindx++) {
                 for (int u = 0; u < usersLength; u++) {
                     dis = dis + Math.pow(groupDisagreement[u][itemindx] - groupDisagreement[0][itemindx], 2);
+
+
+                    dis = dis * 1 / groupSize[g];
                 }
 
-                dis = dis * 1 / groupSize[g];
-
+                System.out.printf("The disargeement in group %s with item %s is: ", groupSize[g], items[itemindx], dis);
             }
-            //  System.out.println(dis);
-
         }
 
     }
 
     public static void AveragePairWise() {
         System.out.printf("%s", "Average Pair-Wise");
+        int v = 0;
+        int u;
         for (int g = 0; g < groupLength; g++) {
             for (int i = 0; i < itemsLength; i++) {
                 double dis = 0;
-                for (int u = 0; u < usersLength; u++) {
-                    for (int v = 0; v < 5; v++) {
+                for (u = 0; u < usersLength; u++) {
+                    for (v = 0; v < 5; v++) {
                         if (u != v)
                             dis = dis + Math.abs(Relevance[u][i] - Relevance[v][i]);
                     }
+
+                    dis = dis * 2 / (groupSize[g] * (groupSize[g] - 1));
+
                 }
-                dis = dis * 2 / (groupSize[g] * (groupSize[g] - 1));
-
-
-
                 avgPair[g][i] = dis;
 
-                // System.out.println(avgPair[g][i]);
+                System.out.printf("The average disagreement between user %s and user %s is %.2f.\n", users[u], users[v], avgPair[g][i]);
 
             }
 
@@ -293,7 +295,11 @@ public class GR_Algorithm {
 
                 CFunction[g][items] = con;
 
+
+                System.out.println(CFunction[g][items]);
+
             }
+
 
         }
     }
