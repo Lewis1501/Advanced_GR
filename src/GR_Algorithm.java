@@ -182,15 +182,10 @@ public class GR_Algorithm {
                         Sim[uy][ux] = 0;
                         Sim[ux][uy] = 0;
                     }
-
                 }
-
-                System.out.printf("userx: [%s] has a similarity to usery: [%s} of %.2f.\n", Sim[ux], Sim[uy], Sim[ux][uy]);
-
+                // System.out.printf("userx: [%s] has a similarity to usery: [%s] of %.2f.\n",Sim[ux], Sim[uy], Sim[ux][uy]);
             }
-
         }
-
     }
 
 
@@ -203,8 +198,8 @@ public class GR_Algorithm {
                     Rel = Rel + (Sim[ux][uy] * ratings[uy][item_idx]);
                 }
                 Relevance[ux][item_idx] = Rel;
-                if (Relevance[ux][item_idx] != Relevance[0][0])
-                    System.out.printf("user %s for item %s has a relevance of %.2f.\n", users[ux], items[item_idx], Relevance[ux][item_idx]);
+                //if (Relevance[ux][item_idx] != Relevance[0][0])
+                //System.out.printf("user %s for item %s has a relevance of %.2f.\n", users[ux], items[item_idx], Relevance[ux][item_idx]);
                 }
             }
         }
@@ -220,9 +215,8 @@ public class GR_Algorithm {
                     // System.out.println(min);
                     rel[g][itemindx] = min;
                 }
-                /**if (rel[g][itemindx] != rel[0][0])
-                 System.out.print("The least misery is " + rel[g][itemindx]);
-                 */
+                if (rel[g][itemindx] != rel[0][0]) System.out.print("The least misery is " + rel[g][itemindx]);
+
             }
         }
     }
