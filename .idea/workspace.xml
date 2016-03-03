@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7eee8e1e-b0ba-43f1-893d-77964f747806" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Group_Recommendation_Algorithm/GR_Algorithm.class" afterPath="$PROJECT_DIR$/out/production/Group_Recommendation_Algorithm/GR_Algorithm.class" />
+    <list default="true" id="7eee8e1e-b0ba-43f1-893d-77964f747806" name="Default" comment="Fixed Concensus function">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Groups &amp; Recommenders" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GR_Algorithm.java" afterPath="$PROJECT_DIR$/src/GR_Algorithm.java" />
     </list>
@@ -33,49 +33,81 @@
     <favorites_list name="Group_Recommendation_Algorithm" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GR_Algorithm.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GR_Algorithm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0916442">
-              <caret line="327" column="51" selection-start-line="327" selection-start-column="51" selection-end-line="327" selection-end-column="51" />
-              <folding>
-                <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
-                <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-                <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-                <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-                <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-                <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-                <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-                <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-                <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-                <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Group_Recommendation_Algorithm.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Group_Recommendation_Algorithm.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fileSpiltter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Util/fileSpiltter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.66459626">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="GR_Algorithm.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/GR_Algorithm.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.49304175">
+                  <caret line="298" column="16" selection-start-line="298" selection-start-column="16" selection-end-line="298" selection-end-column="16" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Groups &amp; Recommenders" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Groups &amp; Recommenders">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Group_Recommendation_Algorithm.iml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Group_Recommendation_Algorithm.iml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="fileSpiltter.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Util/fileSpiltter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="GR_Algorithm.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/GR_Algorithm.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.7634195">
+                  <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -113,10 +145,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1358" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -125,7 +157,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -150,32 +182,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Group_Recommendation_Algorithm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.8 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Group_Recommendation_Algorithm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.8 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -690,7 +696,7 @@
       <workItem from="1456756332246" duration="2804000" />
       <workItem from="1456957425448" duration="15000" />
       <workItem from="1457000960626" duration="130000" />
-      <workItem from="1457006171686" duration="3508000" />
+      <workItem from="1457006171686" duration="13276000" />
     </task>
     <task id="LOCAL-00001" summary="Add comment">
       <created>1455554805771</created>
@@ -806,14 +812,20 @@
       <option name="project" value="LOCAL" />
       <updated>1456254779539</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fixed Concensus function">
+      <created>1457009866027</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1457009866027</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6819000" />
+    <option name="totallyTimeSpent" value="16587000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="1358" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -823,10 +835,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30427632" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28243244" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2665535" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18081991" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10555556" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -883,32 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GR_Algorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/u.data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Data/u.genre">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -957,16 +943,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1026,16 +1004,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1045,16 +1015,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1064,16 +1026,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1083,16 +1037,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1102,16 +1048,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1121,16 +1059,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1140,16 +1070,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1159,16 +1081,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1178,16 +1092,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1204,16 +1110,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1223,16 +1121,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1242,16 +1132,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1261,16 +1143,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1280,16 +1154,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1357,14 +1223,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Util/fileSpiltter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/Keeping 1st year Uni/FinchGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07881773">
@@ -1423,21 +1281,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Groups &amp; Recommenders">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Util/fileSpiltter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GR_Algorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0916442">
-          <caret line="327" column="51" selection-start-line="327" selection-start-column="51" selection-end-line="327" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.49304175">
+          <caret line="298" column="16" selection-start-line="298" selection-start-column="16" selection-end-line="298" selection-end-column="16" />
           <folding>
-            <element signature="method#main#0;class#GR_Algorithm#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItems#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getItem#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getUsers#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#emptyRatings#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#isElementEmpty#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="docComment;method#getSim#0;class#GR_Algorithm#0" expanded="false" />
-            <element signature="method#getSim#0;class#GR_Algorithm#0" expanded="false" />
           </folding>
         </state>
       </provider>

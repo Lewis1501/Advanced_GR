@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Created by Sony VAIO on 26/01/2016.
  */
@@ -41,12 +43,14 @@ public class GR_Algorithm {
         //testTwo();
         UserSim();
         Relevance();
-        //LeastMisery();
-        DisagreementVariance();
+        LeastMisery();
+        //DisagreementVariance();
         //AverageRelevance();
         //AveragePairWise();
         //Consensus(0.5, 0.5);
-        }
+        // System.out.println(itemsRecommended());
+
+    }
     public static void init() {
 
         /** Array for [users]**/
@@ -126,10 +130,10 @@ public class GR_Algorithm {
 
         /** get from data for combinations of files **/
         ratings[0][1] = 1;
-        ratings[1][1] = 4;
-        ratings[2][3] = 4;
-        ratings[3][7] = 2;
-        ratings[4][5] = 3;
+        ratings[1][1] = 5;
+        ratings[2][3] = 3;
+        ratings[3][7] = 5;
+        ratings[4][5] = 2;
 
         //ratings[5][4] = 3;
         //ratings[6][7] = 4;
@@ -141,6 +145,10 @@ public class GR_Algorithm {
 
 
     }
+
+    /**
+     * Computing the similiarity between u and u'
+     **/
     public static void UserSim() {
         for (int ux = 0; ux < usersLength; ux++) {
             double nominator = 0, denominator = 0;
@@ -148,13 +156,14 @@ public class GR_Algorithm {
                 for (int item_idx = 0; item_idx < itemsLength; item_idx++) {
                     if (ratings[ux][item_idx] != 0 || ratings[uy][item_idx] != 0) {
                         denominator++;
+
                     }
                     for (int item_idy = 0; item_idy < itemsLength; item_idy++) {
                         if (ratings[ux][item_idx] != 0 && ratings[uy][item_idy] != 0 && (Math.abs(ratings[ux][item_idx] - ratings[uy][item_idy]) <= 2)) {
                             nominator++;
                         }
                     }
-                    //System.out.println(nominator + " " + denominator);
+                    // System.out.println("Numinator\n" + nominator+"\n" + " Demoni\n" + denominator );
 
                     if (denominator != 0) {
                         Sim[ux][uy] = nominator / denominator;
@@ -164,20 +173,25 @@ public class GR_Algorithm {
                         Sim[ux][uy] = 0;
                     }
                 }
-                // System.out.printf("user(x): [%s] has a similarity to user(y): [%s] of %.2f.\n",users[ux], users[uy], Sim[ux][uy]);
+                //System.out.printf("user(x): [%s] has a similarity to user(y): [%s] of %.2f.\n",users[ux], users[uy], Sim[ux][uy]);
             }
         }
     }
     public static void Relevance() {
-
         for (int ux = 0; ux < usersLength; ux++) {
             for (int item_idx = 0; item_idx < itemsLength; item_idx++) {
                 double Rel = 0;
+                double sum = 0;
                 for (int uy = 0; uy < usersLength; uy++) {
+                    // sum = sum + Sim[ux][uy];
+                    //sum = sum / 1;
                     Rel = Rel + (Sim[ux][uy] * ratings[uy][item_idx]);
                 }
+
+                //
+                //
                 Relevance[ux][item_idx] = Rel;
-                // if (Relevance[ux][item_idx] != Relevance[0][0])
+                //if (Relevance[ux][item_idx] != Relevance[0][0])
                 // System.out.printf("user %s for item %s has a relevance of %.2f.\n", users[ux], items[item_idx], Relevance[ux][item_idx]);
             }
             }
@@ -190,9 +204,8 @@ public class GR_Algorithm {
                     if (Relevance[u][itemindx] != Relevance[0][0] && Relevance[u][itemindx] < min) {
                         min = Relevance[u][itemindx];
                     }
-                    System.out.println(min);
-                    rel[g][itemindx] = min;
                 }
+                rel[g][itemindx] = min;
                 if (rel[g][itemindx] != rel[0][0])
                     System.out.printf("The least rated item for group %s was item %s with a rating of: %.2f\n", groupSize[g], items[itemindx], rel[g][itemindx]);
             }
@@ -276,6 +289,23 @@ public class GR_Algorithm {
 
         }
     }
+
+    public static ArrayList<Integer> itemsRecommended() {
+
+
+        int[] n = {1, 2, 3, 4, 5, 6};
+        ArrayList<Integer> arr = new ArrayList<>();
+        for (int item = 0; item < itemsLength; item++) {
+            for (int u = 0; item < usersLength; u++) {
+                for (int m : n)
+                    //threshold for acceptable results.
+                    if (ratings[u][item] > 3)
+                        arr.add(m);
+            }
+        }
+
+        return arr;
+    }
     public static void getItems(double[] items) {
         System.out.println("Items:");
         for (int i = 0; i < items.length; i++) {
@@ -294,7 +324,6 @@ public class GR_Algorithm {
         }
         System.out.println(items[i] + " at index: " + i);
     }
-
     public static void getUsers(double[] users){
         System.out.println("Users:");
         for (double user : users) {
