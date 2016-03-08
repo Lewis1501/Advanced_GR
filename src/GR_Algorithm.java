@@ -48,7 +48,7 @@ public class GR_Algorithm {
         //AverageRelevance();
         //AveragePairWise();
         //Consensus(0.5, 0.5);
-        // System.out.println(itemsRecommended());
+        System.out.println(itemsRecommended());
 
     }
     public static void init() {
