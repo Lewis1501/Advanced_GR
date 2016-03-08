@@ -42,12 +42,13 @@ public class GR_Algorithm {
        // getItems(items);
         //testTwo();
         UserSim();
-        Relevance();
-        LeastMisery();
-        //DisagreementVariance();
-        //AverageRelevance();
+        //  Relevance();
+        // LeastMisery();
+        // DisagreementVariance();
+        // AverageRelevance();
         //AveragePairWise();
         //Consensus(0.5, 0.5);
+        //topK(2);
         System.out.println(itemsRecommended());
 
     }
@@ -90,7 +91,6 @@ public class GR_Algorithm {
         /**End**/
 
 
-
         /** Array for [items]**/
         items = new double[20];
 
@@ -122,28 +122,29 @@ public class GR_Algorithm {
         /** Array for [user][items] Ratings**/
         //User (U) '0' (from array 1) rated item (I) '17' (from array 2) 3, ratings are from 1 - 5..
         ratings = new double[5][20];
-      /*  for(int i = 0; i < 10;i++){
-            for(int j = 0 ; j < 20;j++){
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 20; j++) {
                 ratings[i][j] = 0;
             }
-        }*/
-
-        /** get from data for combinations of files **/
-        ratings[0][1] = 1;
-        ratings[1][1] = 5;
-        ratings[2][3] = 3;
-        ratings[3][7] = 5;
-        ratings[4][5] = 2;
-
-        //ratings[5][4] = 3;
-        //ratings[6][7] = 4;
-        //ratings[7][10] = 1;
-        //ratings[8][19] = 2;
-        //ratings[9][12] = 3;
-
-        /**End**/
 
 
+            /** get from data for combinations of files **/
+            ratings[0][1] = 1;
+            ratings[1][1] = 5;
+            ratings[2][3] = 3;
+            ratings[3][7] = 2;
+            ratings[4][5] = 5;
+
+            //ratings[5][4] = 3;
+            //ratings[6][7] = 4;
+            //ratings[7][10] = 1;
+            //ratings[8][19] = 2;
+            //ratings[9][12] = 3;
+
+            /**End**/
+
+
+        }
     }
 
     /**
@@ -173,7 +174,7 @@ public class GR_Algorithm {
                         Sim[ux][uy] = 0;
                     }
                 }
-                //System.out.printf("user(x): [%s] has a similarity to user(y): [%s] of %.2f.\n",users[ux], users[uy], Sim[ux][uy]);
+                System.out.printf("user(x): [%s] has a similarity to user(y): [%s] of %.2f.\n", users[ux], users[uy], Sim[ux][uy]);
             }
         }
     }
@@ -265,7 +266,7 @@ public class GR_Algorithm {
                 }
                 avgPair[g][i] = dis;
 
-                System.out.printf("The average disagreement between user %s and user %s is %.2f.\n", users[u], users[v], avgPair[g][i]);
+                // System.out.printf("The average disagreement between user %s and user %s is %.2f.\n", users[u], users[v], avgPair[g][i]);
 
             }
 
@@ -275,14 +276,14 @@ public class GR_Algorithm {
     }
     public static void Consensus(double w1, double w2) {
         for (int g = 0; g < groupLength; g++) {
-            double con = 0;
+            double con;
             for (int items = 0; items < itemsLength; items++) {
-                con = con + w1 * Relevance[g][items] + w2 * (1 - groupDisagreement[g][items]);
+                con = w1 * Relevance[g][items] + w2 * (1 - groupDisagreement[g][items]);
 
                 CFunction[g][items] = con;
 
 
-                System.out.println(CFunction[g][items]);
+                System.out.printf("item %d ranked a score of %.2f\n", items, CFunction[g][items]);
 
             }
 
@@ -290,10 +291,29 @@ public class GR_Algorithm {
         }
     }
 
+    public static void topK(int K) {
+
+        int[] top = new int[itemsLength];
+        for (int i = 0; i < itemsLength; i++)
+            top[i] = 0;
+
+        for (int k = 0; k < K; k++) {
+            double max = -1;
+            int max_i = 0;
+            for (int i = 0; i < itemsLength; i++) {
+                if (top[i] == 0 && max < CFunction[0][i]) {
+                    max = CFunction[0][i];
+                    max_i = i;
+                }
+            }
+            //System.out.printf("%.2f %.2f",max_i,max );
+            System.out.println(max_i + " " + max);
+            top[max_i] = 1;
+        }
+    }
+
     public static ArrayList<Integer> itemsRecommended() {
-
-
-        int[] n = {1, 2, 3, 4, 5, 6};
+        int[] n = {1, 2, 3, 4, 5};
         ArrayList<Integer> arr = new ArrayList<>();
         for (int item = 0; item < itemsLength; item++) {
             for (int u = 0; item < usersLength; u++) {
