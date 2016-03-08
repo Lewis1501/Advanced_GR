@@ -4,7 +4,6 @@
     <list default="true" id="7eee8e1e-b0ba-43f1-893d-77964f747806" name="Default" comment="Fixed Concensus function">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Group_Recommendation_Algorithm/GR_Algorithm.class" afterPath="$PROJECT_DIR$/out/production/Group_Recommendation_Algorithm/GR_Algorithm.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GR_Algorithm.java" afterPath="$PROJECT_DIR$/src/GR_Algorithm.java" />
     </list>
     <ignored path="Group_Recommendation_Algorithm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/src/GR_Algorithm.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="3.4164588">
-              <caret line="179" column="36" selection-start-line="179" selection-start-column="36" selection-end-line="179" selection-end-column="36" />
+              <caret line="177" column="36" selection-start-line="177" selection-start-column="36" selection-end-line="177" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -692,7 +691,7 @@
       <workItem from="1457101881014" duration="1230000" />
       <workItem from="1457123913041" duration="87000" />
       <workItem from="1457374384681" duration="4970000" />
-      <workItem from="1457469427329" duration="305000" />
+      <workItem from="1457469427329" duration="332000" />
     </task>
     <task id="LOCAL-00001" summary="Add comment">
       <created>1455554805771</created>
@@ -832,11 +831,17 @@
       <option name="project" value="LOCAL" />
       <updated>1457441558845</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Fixed Concensus function">
+      <created>1457469747162</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1457469747162</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23330000" />
+    <option name="totallyTimeSpent" value="23357000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1278,7 +1283,7 @@
     <entry file="file://$PROJECT_DIR$/src/GR_Algorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.4164588">
-          <caret line="179" column="36" selection-start-line="179" selection-start-column="36" selection-end-line="179" selection-end-column="36" />
+          <caret line="177" column="36" selection-start-line="177" selection-start-column="36" selection-end-line="177" selection-end-column="36" />
           <folding />
         </state>
       </provider>
