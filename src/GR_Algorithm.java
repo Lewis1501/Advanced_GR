@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * Created by Sony VAIO on 26/01/2016.
  */
@@ -42,14 +40,13 @@ public class GR_Algorithm {
        // getItems(items);
         //testTwo();
         UserSim();
-        //  Relevance();
+        Relevance();
         // LeastMisery();
         // DisagreementVariance();
         // AverageRelevance();
         //AveragePairWise();
         //Consensus(0.5, 0.5);
         //topK(2);
-        System.out.println(itemsRecommended());
 
     }
     public static void init() {
@@ -174,7 +171,7 @@ public class GR_Algorithm {
                         Sim[ux][uy] = 0;
                     }
                 }
-                System.out.printf("user(x): [%s] has a similarity to user(y): [%s] of %.2f.\n", users[ux], users[uy], Sim[ux][uy]);
+                //  System.out.printf("user(x): [%s] has a similarity to user(y): [%s] of %.2f.\n", users[ux], users[uy], Sim[ux][uy]);
             }
         }
     }
@@ -182,18 +179,16 @@ public class GR_Algorithm {
         for (int ux = 0; ux < usersLength; ux++) {
             for (int item_idx = 0; item_idx < itemsLength; item_idx++) {
                 double Rel = 0;
-                double sum = 0;
                 for (int uy = 0; uy < usersLength; uy++) {
-                    // sum = sum + Sim[ux][uy];
-                    //sum = sum / 1;
+
                     Rel = Rel + (Sim[ux][uy] * ratings[uy][item_idx]);
                 }
 
                 //
                 //
                 Relevance[ux][item_idx] = Rel;
-                //if (Relevance[ux][item_idx] != Relevance[0][0])
-                // System.out.printf("user %s for item %s has a relevance of %.2f.\n", users[ux], items[item_idx], Relevance[ux][item_idx]);
+                if (Relevance[ux][item_idx] != Relevance[0][0])
+                    System.out.printf("user %s for item %s has a relevance of %.2f.\n", users[ux], items[item_idx], Relevance[ux][item_idx]);
             }
             }
         }
@@ -312,20 +307,6 @@ public class GR_Algorithm {
         }
     }
 
-    public static ArrayList<Integer> itemsRecommended() {
-        int[] n = {1, 2, 3, 4, 5};
-        ArrayList<Integer> arr = new ArrayList<>();
-        for (int item = 0; item < itemsLength; item++) {
-            for (int u = 0; item < usersLength; u++) {
-                for (int m : n)
-                    //threshold for acceptable results.
-                    if (ratings[u][item] > 3)
-                        arr.add(m);
-            }
-        }
-
-        return arr;
-    }
     public static void getItems(double[] items) {
         System.out.println("Items:");
         for (int i = 0; i < items.length; i++) {
