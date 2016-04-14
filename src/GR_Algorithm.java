@@ -45,8 +45,8 @@ public class GR_Algorithm {
         // DisagreementVariance();
         // AverageRelevance();
         //AveragePairWise();
-        //Consensus(0.5, 0.5);
-        //topK(2);
+        Consensus(0.5, 0.5);
+        topK(2);
 
     }
     public static void init() {
@@ -301,7 +301,7 @@ public class GR_Algorithm {
                     max_i = i;
                 }
             }
-            //System.out.printf("%.2f %.2f",max_i,max );
+            // System.out.printf("%.2f %.2f",max_i,max );
             System.out.println(max_i + " " + max);
             top[max_i] = 1;
         }
